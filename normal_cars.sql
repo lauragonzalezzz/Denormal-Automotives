@@ -93,6 +93,9 @@ INNER JOIN vehicles
 ON vehicles.models_id = models.id
 WHERE makes.makes_code = 'LAM';
 
-
--- --There is no order in a declarative language.
--- --You can call an alias before you set it and it will work fine
+-- 10
+SELECT models.*
+FROM models
+INNER JOIN vehicles
+ON models.id = vehicles.models_id
+WHERE year BETWEEN 2010 AND 2015;
