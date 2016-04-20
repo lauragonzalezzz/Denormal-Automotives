@@ -78,20 +78,20 @@ ALTER TABLE car_models
 DROP COLUMN makes_id;
 -- --QUERYING
 -- --8
--- SELECT models.model_title
--- FROM models
--- INNER JOIN makes
--- ON makes.id = models.makes_id
--- WHERE makes.makes_code = 'VOLKS';
+SELECT models.model_title
+FROM models
+INNER JOIN makes
+ON makes.id = models.makes_id
+WHERE makes.makes_code = 'VOLKS';
 
--- --9
--- SELECT makes.makes_code, models.model_code, models.model_title, year
--- FROM makes
--- INNER JOIN models
--- ON makes.id = models.makes_id
--- INNER JOIN vehicles
--- ON vehicles.models_id = models.id
--- WHERE makes.makes_code = 'LAM';
+--9
+SELECT makes.makes_code, models.model_code, models.model_title, year
+FROM makes
+INNER JOIN models
+ON makes.id = models.makes_id
+INNER JOIN vehicles
+ON vehicles.models_id = models.id
+WHERE makes.makes_code = 'LAM';
 
 
 -- --There is no order in a declarative language.
